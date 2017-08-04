@@ -1,0 +1,32 @@
+{"products": [
+	{
+		"id": 1,
+		"title": "Pixel",
+		"image": "assets/pixel.png",
+		"price": 700
+	},
+	{
+		"id": 2,
+		"title": "Pixel C",
+		"image": "assets/pixelC.png",
+		"price": 400
+	},
+	{
+		"id": 3,
+		"title": "DayDream",
+		"image": "assets/daydream.png",
+		"price": 80
+	},
+	{
+		"id": 4,
+		"title": "Home",
+		"image": "assets/home.png",
+		"price": 100
+	},
+	{
+		"id": 5,
+		"title": "Project Fi",
+		"image": "assets/fi.png",
+		"price": 30
+	}
+]}

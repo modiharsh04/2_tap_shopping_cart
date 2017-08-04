@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<td ng-repeat="product in products | orderBy:'price':true | limitTo:3"><img ng-src="{{product.image}}" width="300px" height="300px" />
+		<br /><br /><br />
+		{{product.title}}
+			<span class="container right buton" style="margin-left: 30px;" ng-click="addToCart(product)">Add to Cart</span>
+		<br>${{product.price}}</td>
+	</tr>
+	<tr>
+		<td ng-repeat="product in products | orderBy:'price':true | limitTo:(3 - products.length)"><img ng-src="{{product.image}}" width="300px" height="300px" />
+		<br /><br /><br />
+		{{product.title}}
+			<span class="container right buton" style="margin-left: 30px;" ng-click="addToCart(product)">Add to Cart</span>
+		<br>${{product.price}}</td>
+	</tr>
+</table>

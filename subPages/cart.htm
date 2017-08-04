@@ -1,0 +1,10 @@
+<center><h2>YOUR CART</h2></center>
+<table>
+	<tr style="margin: auto;" ng-repeat="product in cart">
+		<td>{{product.title}} </td>
+		<td><button ng-click="removeItem(product)" style="margin-left: 20px;">remove</button></td>
+		<td><input type="number" step="1" min="0" name="" ng-model="product.quantity" ng-value="product.quantity" style="width: 50px;" class="right"></td>
+	</tr>
+</table>
+<span class="container left redBack">Total Amount: ${{total()}}.00</span>
+<span class="container left buton" ng-click="checkOutProcess()">Check Out</span>

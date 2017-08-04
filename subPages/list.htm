@@ -1,0 +1,12 @@
+<div class="products" >
+	<img ng-src="{{selItem}}" width="300px" height="300px" />
+	<ul class="left">
+		<li class="items redBack" ng-repeat="product in products | orderBy:'price':true">
+			<div ng-mouseover="changeImage(product)">{{product.title}} 
+				<span class="container right buton" style="margin-left: 30px;" ng-click="addToCart(product)">Add to Cart</span>
+				<br />
+				${{product.price}}.00 
+			</div>
+		</li>
+	</ul>
+</div>
