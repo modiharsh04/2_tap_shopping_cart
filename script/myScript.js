@@ -56,6 +56,9 @@ angular.module("myApp",[])
 			$scope.doBuy = function(){
 				if (frm.customerForm.$valid){
 					var msg = "Dear " + $scope.custName + ", Thank you for shopping with us.";
+					var parent = $scope.$parent;
+					parent.checkingOut = false;
+					parent.cart.length = 0;
 					$window.alert(msg);
 					$scope.custName = '';
 					$scope.email = '';
