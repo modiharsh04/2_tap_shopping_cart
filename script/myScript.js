@@ -3,7 +3,7 @@ angular.module("myApp",[])
 				$scope.helloTo = {};
 				$scope.helloTo.title = "Harsh";
 		})
-		.controller("myStoreController", function($scope,$http,$window) {
+		.controller('myStoreController', function($scope,$http,$window) {
 
 			$http.get("products.json").then( function(response) {
                $scope.products = response.data.products;
@@ -11,7 +11,6 @@ angular.module("myApp",[])
 
             $scope.cart = [];
 			$scope.checkingOut = false;
-			$scope.storeView = true;
 			$scope.selItem = "assets/pixel.png";
 
 			$scope.total = function(){
@@ -51,9 +50,17 @@ angular.module("myApp",[])
 					$scope.checkingOut = !$scope.checkingOut;
 				} 
 			};
-			$scope.name = 'your name';
+
+			var frm = this;
+
 			$scope.doBuy = function(){
-				var msg = "Dear " + $scope.name + ", Thank you for shopping with us.";
-				$window.alert(msg);
+				if (frm.customerForm.$valid){
+					var msg = "Dear " + $scope.custName + ", Thank you for shopping with us.";
+					$window.alert(msg);
+					$scope.custName = '';
+					$scope.email = '';
+					$scope.address = '';
+					frm.customerForm.$setPristine();
+				}
 			};
 		});

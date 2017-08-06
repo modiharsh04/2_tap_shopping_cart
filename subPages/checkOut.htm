@@ -1,8 +1,9 @@
-<form name="customerForm">
+<div ng-controller = "myStoreController as ctrl">
+<form name="ctrl.customerForm">
 	<table>
 		<tr>
 			<td><label for="Name">Name: </label></td>
-			<td><input type="text" id="Name" name="name" ng-model="name" placeholder="Enter your Name" required></td>
+			<td><input type="text" id="Name" name="name" ng-model="custName" placeholder="Enter your Name" required></td>
 		</tr>
 		<tr>
 			<td><label for="Email">Email: </label></td>
@@ -13,13 +14,13 @@
 			<td><textarea id="Address" name="address" ng-model="address" placeholder="Enter your Address" required></textarea></td>
 		</tr>
 	</table>
-</form>
-<span class="left" style="color: red;margin: 15px auto;" ng-show="customerForm.name.$dirty && customerForm.name.$invalid || 
-customerForm.email.$dirty && customerForm.email.$invalid ||
-customerForm.address.$dirty && customerForm.address.$invalid">
+<span class="left" style="color: red;margin: 15px auto;" ng-show=" ctrl.customerForm.name.$invalid ||
+ctrl.customerForm.email.$invalid ||
+ctrl.customerForm.address.$invalid">
 <span>All fields are REQUIRED.</span>
 </span>
-<span class="right container buton" ng-hide="
-customerForm.name.$dirty && customerForm.name.$invalid || 
-customerForm.email.$dirty && customerForm.email.$invalid ||
-customerForm.address.$dirty && customerForm.address.$invalid" ng-click="doBuy()">Buy</span>
+<button class="right container buton" ng-hide=" ctrl.customerForm.name.$invalid ||
+ctrl.customerForm.email.$invalid ||
+ctrl.customerForm.address.$invalid" ng-click="doBuy()">Buy</button>
+</form>
+</div>

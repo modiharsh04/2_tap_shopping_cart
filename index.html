@@ -6,18 +6,18 @@
 	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<script src="script/myScript.js"></script>
 </head>
-<body ng-controller = "myStoreController">
+<body ng-controller = "myStoreController" >
 <div class="allContain">
 	<div class="innerContain">
-		<span>Grid &nbsp;
+		<span>List &nbsp;
 			<label class="switch">
 			  <input type="checkbox" ng-model="storeView">
 			  <div class="slider round"></div>
-			</label>&nbsp; List
+			</label>&nbsp; Grid
 		</span>
 		<br>
 		<div class="container left">
-			<div ng-include="storeView?'../subPages/list.htm':'../subPages/grid.htm'"></div>
+			<div ng-include="storeView?'../subPages/grid.htm':'../subPages/list.htm'"></div>
 		</div>
 		<div class="container left" ng-include="'subPages/cart.htm'"></div>
 		<div class="container left" ng-show = "checkingOut"  id="checkOut" ng-include="'subPages/checkOut.htm'"></div>
